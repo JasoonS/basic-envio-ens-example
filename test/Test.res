@@ -8,7 +8,9 @@ describe("ETHRegistrarController contract NameRegistered event tests", () => {
   let mockDb = MockDb.createMockDb()
 
   // Creating mock for ETHRegistrarController contract NameRegistered event
-  let event = ETHRegistrarController.NameRegistered.createMockEvent({/* It mocks event fields with default values. You can overwrite them if you need */});
+  let event = ETHRegistrarController.NameRegistered.createMockEvent({
+    /* It mocks event fields with default values. You can overwrite them if you need */
+  })
 
   Async.it("ETHRegistrarController_NameRegistered is created correctly", async () => {
     // Processing the event
@@ -20,12 +22,12 @@ describe("ETHRegistrarController contract NameRegistered event tests", () => {
     // Getting the actual entity from the mock database
     let actualETHRegistrarControllerNameRegistered =
       mockDbUpdated.entities.eTHRegistrarController_NameRegistered.get(
-        `${event.chainId}_${event.block.number}_${event.logIndex->Belt.Int.toString}`,
+        `${event.chainId->Belt.Int.toString}_${event.block.number->Belt.Int.toString}_${event.logIndex->Belt.Int.toString}`,
       )->Option.getExn
 
     // Creating the expected entity
     let expectedETHRegistrarControllerNameRegistered: Types.eTHRegistrarController_NameRegistered = {
-      id: `${event.chainId}_${event.block.number}_${event.logIndex->Belt.Int.toString}`,
+      id: `${event.chainId->Belt.Int.toString}_${event.block.number->Belt.Int.toString}_${event.logIndex->Belt.Int.toString}`,
       name: event.params.name,
       label: event.params.label,
       owner: event.params.owner->Address.toString,
