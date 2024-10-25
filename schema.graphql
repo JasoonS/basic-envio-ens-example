@@ -1,0 +1,28 @@
+type ETHRegistrarController_NameRegistered {
+  id: ID!
+  name: String!
+  label: String!
+  owner: String!
+  cost: BigInt!
+  expires: BigInt!
+}
+
+type ETHRegistrarController_NameRenewed {
+  id: ID!
+  name: String!
+  label: String!
+  cost: BigInt!
+  expires: BigInt!
+}
+
+type ETHRegistrarController_NewPriceOracle {
+  id: ID!
+  oracle: String!
+}
+
+type ETHRegistrarController_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
