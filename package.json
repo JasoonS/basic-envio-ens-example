@@ -1,5 +1,5 @@
 {
-  "name": "envio-indexer",
+  "name": "hosted-service-tester",
   "version": "0.1.0",
   "scripts": {
     "clean": "rescript clean",
@@ -12,14 +12,16 @@
     "start": "pnpm build && node generated/src/Index.bs.js"
   },
   "devDependencies": {
-    "@rescript/react": "0.12.1", 
     "@glennsl/rescript-fetch": "0.2.0",
-    "@ryyppy/rescript-promise": "2.1.0",
-    "rescript": "11.1.3",
-    "mocha": "10.2.0"
+    "@rescript/react": "0.12.1",
+    "mocha": "10.2.0",
+    "rescript": "11.1.3"
   },
   "dependencies": {
-    "envio": "2.4.4"
+    "envio": "2.11.5",
+    "ethers": "6.8.0",
+    "pino": "8.16.1",
+    "pino-pretty": "10.2.3"
   },
   "optionalDependencies": {
     "generated": "./generated"

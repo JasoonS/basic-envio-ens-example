@@ -8,9 +8,7 @@ describe("ETHRegistrarController contract NameRegistered event tests", () => {
   let mockDb = MockDb.createMockDb()
 
   // Creating mock for ETHRegistrarController contract NameRegistered event
-  let event = ETHRegistrarController.NameRegistered.createMockEvent({
-    /* It mocks event fields with default values. You can overwrite them if you need */
-  })
+  let event = ETHRegistrarController.NameRegistered.createMockEvent({/* It mocks event fields with default values. You can overwrite them if you need */});
 
   Async.it("ETHRegistrarController_NameRegistered is created correctly", async () => {
     // Processing the event
